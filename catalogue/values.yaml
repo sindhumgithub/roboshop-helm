@@ -1,0 +1,9 @@
+deployment:
+  imageRepo: muddanadevops/catalogue
+  imageVersion: v1
+
+configmap:
+ mongoURL: "mongodb://mongodb:27017/catalogue"
+
+ service:
+  targetport: 80

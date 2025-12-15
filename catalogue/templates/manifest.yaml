@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: catalogue
+  namespace: roboshop
+data: #This is my main config map block which is mentioned inside data block
+  MONGO: "true"
+  MONGO_URL: {{ .Values.configmap.mongoURL }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalogue
+  namespace: roboshop
+  # these are replica set labels
+  labels:
+    project: roboshop
+    component: catalogue
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    # these labels are used to select pods
+    matchLabels:
+      project: roboshop
+      component: catalogue
+      tier: backend  
+  # pod definition
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        component: catalogue
+        tier: backend
+    spec:
+      containers:
+      - name: catalogue
+        image: "{{ .Values.deployment.imageRepo }}:{{ .Values.deployment.imageVersion }}"
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: catalogue
+# This is readiness probe(getting application ready after start/restart)
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: liveness-port
+          failureThreshold: 1
+          periodSeconds: 15
+
+# This is liveness probe(checking health of application)
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: liveness-port
+          failureThreshold: 1
+          periodSeconds: 15
