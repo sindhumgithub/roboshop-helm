@@ -2,5 +2,3 @@ deployment:
   imageRepo: muddanadevops/mongodb
   imageVersion: v1
 
-  service:
-    type: ClusterIP
