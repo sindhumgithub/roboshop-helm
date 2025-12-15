@@ -10,5 +10,5 @@ spec:
     environment: dev
   ports:
     - protocol: TCP
-      port: 8080          #service port
-      targetPort: {{ .Values.service.targetport }} #container port
+      port: {{ .Values.service.serviceport }}   #service port
+      targetPort: 8080 #container port

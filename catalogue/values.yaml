@@ -6,4 +6,4 @@ configmap:
  mongoURL: "mongodb://mongodb:27017/catalogue"
 
 service:
-  targetport: 80
+  serviceport: 80
