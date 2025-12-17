@@ -1,4 +1,4 @@
 deployment:
   imageRepo: muddanadevops/mongodb
-  imageVersion: 7.0
+  imageVersion: v1
 
