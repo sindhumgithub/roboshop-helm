@@ -1,0 +1,6 @@
+deployment:
+  imageRepo: muddanadevops/rabbitmq
+  imageVersion: 7.0
+
+service:
+  serviceport: 5672

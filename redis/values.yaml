@@ -1,5 +1,5 @@
 deployment:
-  imageRepo: redis
+  imageRepo: muddanadevops/redis
   imageVersion: 7.0
 
 service:

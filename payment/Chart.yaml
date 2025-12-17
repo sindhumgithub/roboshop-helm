@@ -1,0 +1,5 @@
+apiVersion: v2  #apiVersion
+name: payment     #chart name
+version: 1.0.0   #chart version
+description: payment installation
+appVersion: v1    #application version

@@ -1,0 +1,10 @@
+deployment:
+  imagename: muddanadevops/cart
+  imageversion: v1
+  path: /health
+  periodseconds: 15
+
+configmap:
+  redis_host: "redis"
+  catalogue_host: "catalogue"
+  catalogue_port: "8080"

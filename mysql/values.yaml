@@ -1,0 +1,13 @@
+deployment:
+  imageRepo: muddanadevops/mysql
+  imageVersion: v1
+  mountpath: /etc/mysql/conf.d/my.cnf
+
+configmap:
+  cnf: |
+    [mysqld]
+    innodb_redo_log_capacity = 2G
+
+service:
+  serviceport: 3306
+  

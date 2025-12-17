@@ -1,0 +1,12 @@
+deployment:
+  imageRepo: muddanadevops/user
+  imageVersion: v1
+  path: /health
+
+service:
+  serviceport: 8080
+
+configmap:
+  redis_URL: "redis://redis:6379"
+  mongo_URL: "mongodb://mongodb:27017/users"
+

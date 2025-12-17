@@ -1,0 +1,11 @@
+deployment:
+  imagename: muddanadevops/payment
+  imageversion: v1
+  path: /health
+  periodseconds: 15
+  tier: backend
+  projname: roboshop
+
+service:
+  projname: roboshop
+  serviceport: 8080

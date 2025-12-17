@@ -1,0 +1,13 @@
+configmap:
+  cartname: "cart"
+  cart_portno: 8080
+  db_hostname: "mysql"
+
+deployment:
+  projname: roboshop
+  tier: backend
+  imagename: muddanadevops/shipping
+  imageversion: v1
+  path: /health
+  periodseconds: 15
+  componentname: shipping
